@@ -77,6 +77,9 @@ RUN	zypper -n up \
 	&& pip install --upgrade pip \
 	&& pip install supervisor
 
+# copy binary, config files for nginx and goaccess
+COPY 	rootfs /
+
 # set directory permissions
 RUN 	mkdir /var/log/nginx \
 	&& chown -R nginx:nginx /srv/www/htdocs \
